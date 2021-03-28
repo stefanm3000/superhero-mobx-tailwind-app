@@ -1,10 +1,14 @@
 import HeroCard from "../src/components/hero-card";
+import Navbar from "../src/components/navbar";
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <HeroCard />
+    <div>
+      <Navbar />
+      <div className="App">
+        <HeroCard />
+      </div>
     </div>
   );
 }

@@ -9,7 +9,7 @@ const HeroCard = () => {
       {heroes.map((item) => (
         <div
           key={item.id}
-          className=" justify-center items-center flex flex-col p-4"
+          className=" justify-center items-center flex flex-col p-4 bg-opacity-5 bg-gray-200 rounded-2xl border-2 border-white-1"
         >
           <img src={item.images.sm} alt={item.name} className="rounded" />
           <p className="p-3">{item.name}</p>
