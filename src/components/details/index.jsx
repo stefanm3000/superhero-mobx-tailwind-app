@@ -9,19 +9,12 @@ const Details = (props) => {
     fetch(url).then(async (response) => {
       if (response.ok) setHero(await response.json());
     });
-  }, []);
+  }, [url]);
 
   console.log(hero);
   return (
     <div>
       <div>Name: {hero.name}</div>
-      <br></br>
-      <div>Power: {hero.powerstats.power}</div>
-      <div>Intelligence: {hero.powerstats.intelligence}</div>
-      <div>Speed: {hero.powerstats.soeed}</div>
-      <div>Durability: {hero.powerstats.durability}</div>
-      <div>Strength: {hero.powerstats.strength}</div>
-      <div>Combat: {hero.powerstats.combat}</div>
     </div>
   );
 };
