@@ -21,9 +21,46 @@ const Details = (props) => {
         <img src={hero.images.lg} alt={hero.name} className="rounded "></img>
       </div>
       <br></br>
-      <div>Name: {hero.name}</div>
-      <div>Power: {hero.powerstats.power}</div>
-      
+      <div className="infoContainer flex justify-evenly text-left">
+        <div className="biography">
+          <div>
+            <span className="font-bold">Name</span>: {hero.name}
+          </div>
+          <div>
+            <span className="font-bold">Full name</span>:{" "}
+            {hero.biography.fullName}
+          </div>
+          <div className="appearance">
+            <span className="font-bold">Height</span>:{" "}
+            {hero.appearance.height[1]}
+          </div>
+          <div className="appearance">
+            <span className="font-bold">Weight</span>:{" "}
+            {hero.appearance.weight[1]}
+          </div>
+          <div className="appearance">
+            <span className="font-bold">Race</span>: {hero.appearance.race}
+          </div>
+        </div>
+        <div className="powerstats text-right">
+          <span className="font-bold">Powerstats:</span>
+          <br></br>
+          <div>
+            <span className="font-bold">Power</span>: {hero.powerstats.power}
+          </div>
+          <div>
+            <span className="font-bold">Speed</span>: {hero.powerstats.speed}
+          </div>
+          <div>
+            <span className="font-bold">Strength</span>:{" "}
+            {hero.powerstats.strength}
+          </div>
+          <div>
+            <span className="font-bold">Intelligence</span>:{" "}
+            {hero.powerstats.intelligence}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
