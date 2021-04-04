@@ -61,7 +61,7 @@ const Details = (props) => {
         <img
           src={hero.images.lg}
           alt={hero.name}
-          className={`rounded border-4 ${
+          className={`rounded border-2 ${
             hero.biography.alignment === "good"
               ? "border-green-400"
               : "border-red-400"
