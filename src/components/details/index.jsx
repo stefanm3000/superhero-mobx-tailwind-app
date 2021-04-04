@@ -11,7 +11,7 @@ const Details = (props) => {
     });
   }, [url]);
 
-  console.log(hero);
+  console.log("details hero", hero);
 
   if (!hero) return null;
 

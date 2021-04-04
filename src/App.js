@@ -4,6 +4,7 @@ import HeroCard from "./components/hero-card";
 import Navbar from "./components/navbar";
 import Details from "./components/details";
 import Favs from "./components/favs";
+import Alphabet from "./components/letter-select";
 
 import "./App.css";
 
@@ -14,9 +15,10 @@ function App() {
         <Navbar />
         <div className="App">
           <Switch>
-            <Route exact path="/" component={HeroCard} />
+            <Route exact path="/" component={Alphabet} />
             <Route path="/superhero/:id" component={Details} />
             <Route path="/favs" component={Favs} />
+            <Route path="/starts-with/:letter" component={HeroCard} />
           </Switch>
         </div>
       </Router>
