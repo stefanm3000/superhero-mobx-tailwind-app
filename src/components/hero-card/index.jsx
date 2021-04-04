@@ -6,6 +6,7 @@ import useHeroes from "../use-hero";
 const HeroCard = (props) => {
   const letter = props.match.params.letter;
   const heroes = useHeroes();
+  
   const filtered = heroes.filter((hero) =>
     hero.name.toLowerCase().startsWith(letter)
   );
