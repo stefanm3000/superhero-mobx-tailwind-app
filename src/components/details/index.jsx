@@ -58,7 +58,15 @@ const Details = (props) => {
   return (
     <div>
       <div className="flex justify-center items-center">
-        <img src={hero.images.lg} alt={hero.name} className="rounded "></img>
+        <img
+          src={hero.images.lg}
+          alt={hero.name}
+          className={`rounded border-4 ${
+            hero.biography.alignment === "good"
+              ? "border-green-400"
+              : "border-red-400"
+          }`}
+        ></img>
       </div>
       <br></br>
       <div className="infoContainer flex justify-evenly text-left">
