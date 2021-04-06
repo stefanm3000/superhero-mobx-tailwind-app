@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import HeroCard from "./components/hero-card";
+import HeroesGrid from "./components/heroes-grid";
 import Navbar from "./components/navbar";
 import Details from "./components/details";
 import Favs from "./components/favs";
@@ -18,7 +18,7 @@ function App() {
             <Route exact path="/" component={Alphabet} />
             <Route path="/superhero/:id" component={Details} />
             <Route path="/favs" component={Favs} />
-            <Route path="/starts-with/:letter" component={HeroCard} />
+            <Route path="/starts-with/:letter" component={HeroesGrid} />
           </Switch>
         </div>
       </Router>

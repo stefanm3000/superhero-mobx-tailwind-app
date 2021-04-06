@@ -6,8 +6,6 @@ const Details = (props) => {
   const id = props.match.params.id;
   const url = `https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/id/${id}.json`;
 
-  console.log(hero);
-
   useEffect(() => {
     fetch(url).then(async (response) => {
       if (response.ok) setHero(await response.json());
