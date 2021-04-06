@@ -7,6 +7,9 @@ const createHeroStore = () => {
     removeHero(id) {
       this.heroes = this.heroes.filter((hero) => hero.id !== id);
     },
+    removeAll() {
+      this.heroes = [];
+    },
   };
 };
 

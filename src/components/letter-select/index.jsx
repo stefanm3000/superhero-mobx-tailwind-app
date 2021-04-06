@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Alphabet = (props) => {
+const Alphabet = () => {
   const letters = [
     "A",
     "B",
