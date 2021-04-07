@@ -27,11 +27,12 @@ const Details = (props) => {
 
   const CheckNext = ({ currentId }) => {
     return (
-      <button className=" my-10 mt-0 font-bold text-xl border rounded break-normal p-5 break-words	">
-        <Link to={`/superhero/${parseInt(currentId) + 1}`}>
-          next ⟶
-        </Link>
-      </button>
+      <Link
+        className=" my-10 mt-0 font-bold text-xl border rounded break-normal p-5 break-words	"
+        to={`/superhero/${parseInt(currentId) + 1}`}
+      >
+        next ⟶
+      </Link>
     );
   };
 
@@ -78,7 +79,7 @@ const Details = (props) => {
 
   return (
     <div>
-      <div className="flex justify-evenly items-center ">
+      <div className="flex justify-evenly items-center  ">
         <GoBack />
         <CheckNext currentId={id} />
       </div>
