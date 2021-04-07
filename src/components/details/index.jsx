@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import { Link } from "react-router-dom";
+
 const Details = (props) => {
   const [open, setIsOpen] = useState(false);
   const [hero, setHero] = useState(null);
@@ -11,6 +13,27 @@ const Details = (props) => {
       if (response.ok) setHero(await response.json());
     });
   }, [url]);
+
+  const GoBack = () => {
+    return (
+      <button
+        className="my-10 mt-0 font-bold text-xl border rounded p-5 break-words	"
+        onClick={() => props.history.goBack()}
+      >
+        ⟵ back
+      </button>
+    );
+  };
+
+  const CheckNext = ({ currentId }) => {
+    return (
+      <button className=" my-10 mt-0 font-bold text-xl border rounded break-normal p-5 break-words	">
+        <Link to={`/superhero/${parseInt(currentId) + 1}`}>
+          next ⟶
+        </Link>
+      </button>
+    );
+  };
 
   const More = () => {
     return (
@@ -55,6 +78,11 @@ const Details = (props) => {
 
   return (
     <div>
+      <div className="flex justify-evenly items-center ">
+        <GoBack />
+        <CheckNext currentId={id} />
+      </div>
+
       <div className="flex justify-center items-center">
         <img
           src={hero.images.lg}

@@ -1,11 +1,9 @@
-import HeroCard from "../hero-card";
-import { useEffect } from "react";
-
 import { useObserver } from "mobx-react";
 
+import HeroCard from "../hero-card";
 import { useHeroesStore } from "../../mobx/heroes-context/HeroesContext";
 
-const Favs = () => {
+const Favs = (props) => {
   const heroesStore = useHeroesStore();
 
   const handleRemoveAll = (e) => {
@@ -13,10 +11,20 @@ const Favs = () => {
     heroesStore.removeAll();
   };
 
-  useEffect(() => {}, [heroesStore.heroes]);
+  const GoBack = () => {
+    return (
+      <button
+        className="my-10 font-bold text-xl border rounded p-5"
+        onClick={() => props.history.goBack()}
+      >
+        ⟵ go back to last page
+      </button>
+    );
+  };
 
   return useObserver(() => (
     <div>
+      <GoBack />
       <div className="grid grid-cols-1 gap-4 content-center md:grid-cols-3">
         {heroesStore.heroes.map((hero) => (
           <div key={hero.id}>
