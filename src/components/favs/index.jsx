@@ -1,4 +1,5 @@
 import HeroCard from "../hero-card";
+import { useEffect } from "react";
 
 import { useObserver } from "mobx-react";
 
@@ -11,6 +12,8 @@ const Favs = () => {
     e.preventDefault();
     heroesStore.removeAll();
   };
+
+  useEffect(() => {}, [heroesStore.heroes]);
 
   return useObserver(() => (
     <div>
@@ -29,7 +32,7 @@ const Favs = () => {
           Clear favorites
         </button>
       ) : (
-        <h1 className="text-xl font-bold">You have no favorites 😖 </h1>
+        <h1 className="text-xl font-bold">Please select favorites :)</h1>
       )}
     </div>
   ));
