@@ -1,7 +1,8 @@
 import { useObserver } from "mobx-react";
+import { useHeroesStore } from "../../mobx/heroes-context/HeroesContext";
 
 import HeroCard from "../hero-card";
-import { useHeroesStore } from "../../mobx/heroes-context/HeroesContext";
+import Stats from "../stats";
 
 const Favs = (props) => {
   const heroesStore = useHeroesStore();
@@ -32,6 +33,8 @@ const Favs = (props) => {
           </div>
         ))}
       </div>
+      {heroesStore.heroes.length ? <Stats heroes={heroesStore.heroes} /> : null}
+
       {heroesStore.heroes.length ? (
         <button
           className="my-10 font-bold text-xl border rounded p-5"
