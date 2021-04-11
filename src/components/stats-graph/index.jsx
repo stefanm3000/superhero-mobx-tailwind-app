@@ -9,13 +9,11 @@ const Graph = ({ stat, heroes, skill }) => {
       </span>
       <span className="bg-gradient-to-r from-red-400 to-green-400 h-100 w-4/5 left-28 absolute">
         &nbsp;
-        <span className={`${skill} h-6 rounded left-30% absolute border w-1 bg-white`}>
+        <span
+          className={`${skill} h-6 rounded left-30% absolute border w-1 bg-white`}
+          style={{ left: `${stat / heroes}%` }}
+        >
           &nbsp;
-          <style jsx>{`
-            .${skill} {
-              left: ${stat / heroes}%;
-            }
-          `}</style>
         </span>
       </span>
     </li>
