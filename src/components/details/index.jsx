@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-
 import { Link } from "react-router-dom";
+
+import AddOrRemove from "../add-or-remove";
 
 const Details = (props) => {
   const [open, setIsOpen] = useState(false);
@@ -95,6 +96,8 @@ const Details = (props) => {
           }`}
         ></img>
       </div>
+      <br></br>
+      <AddOrRemove hero={hero} />
       <br></br>
       <div className="infoContainer flex justify-evenly text-left">
         <div className="biography">
