@@ -26,7 +26,7 @@ const Navbar = () => {
             favs{"  "}
             <div className="relative bg-white">
               <span
-                className="font-semibold text-xs w-4 absolute top-0 left-1 text-center bg-white rounded-full text-black
+                className="font-semibold text-xs w-5 absolute top-0 left-1 text-center bg-red-600 rounded-full border text-white
             "
               >
                 {favsNumber}
