@@ -1,0 +1,18 @@
+{
+    "plugins": [
+      [
+        "styled-jsx/babel",
+        {
+          "plugins": [
+            [
+              "styled-jsx-plugin-postcss",
+              {
+                "path": "[PATH_PREFIX]/postcss.config.js",
+                "compileEnv": "worker"
+              }
+            ]
+          ]
+        }
+      ]
+    ]
+  }
