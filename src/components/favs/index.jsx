@@ -9,8 +9,6 @@ const Favs = (props) => {
 
   const heroes = useObserver(() => heroesStore.heroes);
 
-  console.log(heroes);
-
   const handleRemoveAll = (e) => {
     e.preventDefault();
     heroesStore.removeAll();
