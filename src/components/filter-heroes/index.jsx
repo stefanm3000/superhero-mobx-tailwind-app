@@ -23,7 +23,7 @@ const FilterHeroes = () => {
           step="1"
           onChange={handleChange}
         ></input>
-        <div className="absolute right-4 top-0 font-semibold rounded-full py-3 px-6">
+        <div className="absolute right-4 top-1 font-semibold text-xs w-8 h-5 text-center bg-pink-400 rounded-full border text-black">
           {num}
         </div>
       </div>
