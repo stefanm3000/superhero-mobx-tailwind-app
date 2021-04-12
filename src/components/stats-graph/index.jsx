@@ -1,6 +1,9 @@
 import React from "react";
 
 const Graph = ({ stat, heroes, skill }) => {
+
+  const number = parseInt(stat / heroes);
+  
   return (
     <>
       <li className="relative p-1">
@@ -11,19 +14,15 @@ const Graph = ({ stat, heroes, skill }) => {
         <span className="bg-gradient-to-r from-red-400 to-green-400 h-100 w-4/5 left-28 absolute">
           &nbsp;
           <span
-            className={`${skill} h-6 rounded left-30% absolute border w-1 bg-white`}
+            className={`leftperc-${number} h-6 rounded left-30% absolute border w-1 bg-white`}
           >
             &nbsp;
           </span>
         </span>
       </li>
-      <style jsx>{`
-        .${skill} {
-          left: ${stat / heroes}%;
-        }
-      `}</style>
     </>
   );
 };
+
 
 export default Graph;

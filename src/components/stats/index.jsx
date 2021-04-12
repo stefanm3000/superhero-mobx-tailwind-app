@@ -27,6 +27,7 @@ const Stats = ({ heroes }) => {
 
   useEffect(() => {
     setStats();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
