@@ -1,44 +1,39 @@
-import { useState, useEffect } from "react";
 import { useObserver } from "mobx-react";
+import { toJS } from "mobx";
 
 import Graph from "../stats-graph";
 
 const Stats = ({ heroes }) => {
   const observableHeroes = useObserver(() => heroes);
+  const heroesJS = toJS(observableHeroes);
   const numOfFavs = observableHeroes.length;
 
-  const [power, setPower] = useState(0);
-  const [strength, setStrength] = useState(0);
-  const [intelligence, setIntelligence] = useState(0);
-  const [speed, setSpeed] = useState(0);
-  const [combat, setCombat] = useState(0);
+  let powernum = 0;
+  let strengthnum = 0;
+  let intellinum = 0;
+  let speednum = 0;
+  let combatnum = 0;
 
-  const setStats = () => {
-    observableHeroes.forEach((hero) => {
-      setPower(() => power + parseInt(hero.powerstats.power));
-      setStrength(() => strength + parseInt(hero.powerstats.strength));
-      setIntelligence(
-        () => intelligence + parseInt(hero.powerstats.intelligence)
-      );
-      setSpeed(() => speed + parseInt(hero.powerstats.speed));
-      setCombat(() => combat + parseInt(hero.powerstats.combat));
+  const powerstat = () =>
+    heroesJS.forEach((hero) => {
+      powernum = powernum + hero.powerstats.power;
+      strengthnum = strengthnum + hero.powerstats.strength;
+      intellinum = intellinum + hero.powerstats.intelligence;
+      speednum = speednum + hero.powerstats.speed;
+      combatnum = combatnum + hero.powerstats.combat;
     });
-  };
 
-  useEffect(() => {
-    setStats();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  powerstat();
 
   return (
     <div className="flex flex-col mt-6">
       <h1 className="text-3xl p-4">Your favorite heroes' average stats: </h1>
       <ul className="border w-4/5 self-center p-6 text-left rounded">
-        <Graph stat={power} heroes={numOfFavs} skill="Power" />
-        <Graph stat={strength} heroes={numOfFavs} skill="Strength" />
-        <Graph stat={intelligence} heroes={numOfFavs} skill="Intelligence" />
-        <Graph stat={speed} heroes={numOfFavs} skill="Speed" />
-        <Graph stat={combat} heroes={numOfFavs} skill="Combat" />
+        <Graph stat={powernum} heroes={numOfFavs} skill="Power" />
+        <Graph stat={strengthnum} heroes={numOfFavs} skill="Strength" />
+        <Graph stat={intellinum} heroes={numOfFavs} skill="Intelligence" />
+        <Graph stat={speednum} heroes={numOfFavs} skill="Speed" />
+        <Graph stat={combatnum} heroes={numOfFavs} skill="Combat" />
       </ul>
     </div>
   );
