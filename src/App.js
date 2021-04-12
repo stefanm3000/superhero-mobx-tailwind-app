@@ -7,6 +7,7 @@ import Favs from "./components/favs";
 import Alphabet from "./components/letter-select";
 import Landing from "./components/landing-page";
 import FilterHeroes from "./components/filter-heroes";
+import Filtered from "./components/filtered-page";
 
 import "./App.css";
 
@@ -20,6 +21,7 @@ function App() {
             <Route exact path="/" component={Landing} />
             <Route path="/alphabet" component={Alphabet} />
             <Route path="/filter" component={FilterHeroes} />
+            <Route path="/filtered" component={Filtered} />
             <Route path="/superhero/:id" component={Details} />
             <Route path="/favs" component={Favs} />
             <Route path="/starts-with/:letter" component={HeroesGrid} />

@@ -1,6 +1,6 @@
 import React from "react";
 
-const FilteredPage = () => {
+const Filtered = ({power, strength, intelligence, speed, combat}) => {
   return (
     <div>
       <h1>under construction</h1>
@@ -8,4 +8,4 @@ const FilteredPage = () => {
   );
 };
 
-export default FilteredPage;
+export default Filtered;
