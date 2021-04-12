@@ -5,14 +5,12 @@ const Graph = ({ stat, heroes, skill }) => {
 
   return (
     <>
-      <li className="relative p-1">
-        <span className="flex-start font-semibold">{skill}: </span>
-        <span className="absolute right-2 font-semibold">{number}</span>
-        <span className="bg-gradient-to-r from-red-400 to-green-400 h-100 w-4/5 left-28 rounded absolute">
+      <li className="z-30 bg-gradient-to-r from-red-400 to-green-400 h-2 relative w-full rounded p-4 my-2">
+        <span className="font-semibold absolute z-40 bottom-1">{skill}:</span>
+        <span className="absolute right-0 font-semibold z-40 bottom-1 right-3">{number}</span>
+
+        <span className={`leftperc-${number} arrow-up bottom-0 absolute w-1`}>
           &nbsp;
-          <span className={`leftperc-${number} arrow-up bottom-0 absolute w-1`}>
-            &nbsp;
-          </span>
         </span>
       </li>
     </>
