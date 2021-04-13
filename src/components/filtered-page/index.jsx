@@ -11,7 +11,7 @@ const Filtered = ({ power, strength, intelligence, speed, combat }) => {
   console.log(powerFiltered);
 
   return (
-    <div className="hero-grid grid grid-cols-1 gap-4 content-center md:grid-cols-3">
+    <div className="hero-grid grid grid-cols-1 gap-4 content-center md:grid-cols-3 mt-20">
       {powerFiltered.map((item) => (
         <HeroCard key={item.id} hero={item} />
       ))}
