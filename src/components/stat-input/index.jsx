@@ -14,7 +14,7 @@ const StatInput = ({ onChange, stat, value }) => {
         id={stat}
         name={stat}
         type="range"
-        className="rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-128 outline-none"
+        className="cursor-pointer rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-128 outline-none"
         min="1"
         max="100"
         step="1"
