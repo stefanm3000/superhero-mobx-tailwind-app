@@ -13,14 +13,14 @@ const FilterHeroes = () => {
   console.log("heroStats", heroStats);
 
   const StatInput = ({ powerstat }) => {
+    const [num, setNum] = useState(50);
     const handleChange = (e) => {
       setHeroStats((prevState) => ({
         ...prevState,
         [e.target.name]: parseInt(e.target.value),
       }));
+      setNum(parseInt(e.target.value));
     };
-
-    console.log("heroStats.powerstat", heroStats.powerstat);
 
     return (
       <div className="flex flex-col border rounded p-3 px-6 my-4 bg-gray-200 relative">
@@ -35,11 +35,11 @@ const FilterHeroes = () => {
           min="1"
           max="100"
           step="1"
-          value={heroStats.powerstat}
+          value={num}
           onChange={handleChange}
         ></input>
         <div className="absolute right-4 top-1 font-semibold text-xs w-8 h-5 text-center bg-pink-400 rounded-full border text-black">
-          {heroStats.powerstat}
+          {num}
         </div>
       </div>
     );
