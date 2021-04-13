@@ -1,9 +1,20 @@
 import React from "react";
 
-const Filtered = ({power, strength, intelligence, speed, combat}) => {
+import HeroCard from "../hero-card";
+import useHeroes from "../use-hero";
+
+const Filtered = ({ power, strength, intelligence, speed, combat }) => {
+  const heroes = useHeroes();
+
+  const powerFiltered = heroes.filter((hero) => hero.powerstats.power > power);
+
+  console.log(powerFiltered);
+
   return (
-    <div>
-      <h1>under construction</h1>
+    <div className="hero-grid grid grid-cols-1 gap-4 content-center md:grid-cols-3">
+      {powerFiltered.map((item) => (
+        <HeroCard key={item.id} hero={item} />
+      ))}
     </div>
   );
 };

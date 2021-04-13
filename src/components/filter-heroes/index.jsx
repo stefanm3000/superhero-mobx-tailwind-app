@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 import StatInput from "../stat-input/";
+import Filtered from "../filtered-page";
 
 const FilterHeroes = () => {
+  const [open, setOpen] = useState(false);
   const [heroStats, setHeroStats] = useState({
     power: 50,
     strength: 50,
@@ -53,13 +54,14 @@ const FilterHeroes = () => {
           stat="combat"
           value={heroStats.combat}
         />
-        <Link
-          to="/filtered"
+        <button
+          onClick={() => setOpen(true)}
           className="m-auto font-bold text-xl border rounded p-6 w-40 bg-white text-blue-600"
         >
           filter
-        </Link>
+        </button>
       </div>
+      {open ? <Filtered power={heroStats.power} /> : null}
     </div>
   );
 };
