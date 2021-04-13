@@ -14,11 +14,8 @@ const FilterHeroes = () => {
 
   const StatInput = ({ powerstat }) => {
     const [num, setNum] = useState(50);
+
     const handleChange = (e) => {
-      setHeroStats((prevState) => ({
-        ...prevState,
-        [e.target.name]: parseInt(e.target.value),
-      }));
       setNum(parseInt(e.target.value));
     };
 
