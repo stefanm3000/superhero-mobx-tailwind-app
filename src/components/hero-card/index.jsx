@@ -4,7 +4,7 @@ import AddOrRemove from "../add-or-remove";
 
 const HeroCard = ({ hero }) => {
   return (
-    <div>
+    <div className="relative">
       <Link key={hero.id} to={`/superhero/${hero.id}`}>
         <div className="justify-center heros-center flex flex-col p-4 bg-black shadow-2xl rounded-2xl border-2 border-white-1">
           <img src={hero.images.sm} alt={hero.name} className="rounded" />
