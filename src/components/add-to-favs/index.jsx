@@ -11,7 +11,7 @@ const AddToFavs = ({ id }) => {
   return (
     <div className="absolute top-1.5 right-3">
       <button
-        className="text-white h-28 w-28 z-100 p-2 outline-none"
+        className="text-white h-24 w-24 z-100 p-2 outline-none opacity-50"
         onClick={handleClick}
       >
         <svg className="text-white stroke-current" viewBox="0 0 24 24">
