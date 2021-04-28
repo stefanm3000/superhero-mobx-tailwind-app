@@ -61,7 +61,15 @@ const FilterHeroes = () => {
           filter
         </button>
       </div>
-      {open ? <Filtered power={heroStats.power} /> : null}
+      {open ? (
+        <Filtered
+          power={heroStats.power}
+          strength={heroStats.strength}
+          speed={heroStats.speed}
+          intelligence={heroStats.intelligence}
+          combat={heroStats.combat}
+        />
+      ) : null}
     </div>
   );
 };
