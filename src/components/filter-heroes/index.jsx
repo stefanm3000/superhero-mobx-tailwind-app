@@ -53,12 +53,14 @@ const FilterHeroes = () => {
           stat="combat"
           value={heroStats.combat}
         />
-        <button
-          onClick={() => setOpen(true)}
-          className="m-auto font-bold text-xl border rounded p-6 w-40 bg-white text-blue-600"
-        >
-          filter
-        </button>
+        {open ? null : (
+          <button
+            onClick={() => setOpen(true)}
+            className="m-auto font-bold text-xl border rounded p-6 w-40 bg-white text-blue-600"
+          >
+            filter
+          </button>
+        )}
       </div>
       {open ? (
         <Filtered
