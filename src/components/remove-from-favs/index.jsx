@@ -1,4 +1,5 @@
 import React from "react";
+
 import { useHeroesStore } from "../../mobx/heroes-context/HeroesContext";
 
 const RemoveFromFavs = ({ id }) => {

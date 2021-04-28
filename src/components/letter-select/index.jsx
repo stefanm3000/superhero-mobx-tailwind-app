@@ -30,6 +30,7 @@ const Alphabet = () => {
     "Y",
     "Z",
   ];
+
   return (
     <div>
       <h1 className="font-bold text-xl">
