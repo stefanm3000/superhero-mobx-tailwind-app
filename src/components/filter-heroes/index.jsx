@@ -18,7 +18,6 @@ const FilterHeroes = () => {
       ...heroStats,
       [stat]: value,
     });
-    console.log(heroStats);
   };
 
   return (

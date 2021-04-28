@@ -15,8 +15,6 @@ const Filtered = ({ power, strength, intelligence, speed, combat }) => {
       hero.powerstats.combat >= combat
   );
 
-  console.log(filtered);
-
   return (
     <div className="hero-grid grid grid-cols-1 gap-4 content-center md:grid-cols-3 mt-20">
       {filtered.map((item) => (
