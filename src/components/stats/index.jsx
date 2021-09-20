@@ -28,7 +28,7 @@ const Stats = ({ heroes }) => {
   return (
     <div className="flex flex-col mt-6">
       <h1 className="text-3xl my-10">Your favorite heroes' average stats: </h1>
-      <ul className="border w-full max-w-l self-center p-3 text-left rounded">
+      <ul className="border flex flex-col space-y-4 w-full max-w-l self-center p-3 text-left rounded">
         <Graph stat={powerNum} heroes={numOfFavs} skill="power" />
         <Graph stat={strengthNum} heroes={numOfFavs} skill="strength" />
         <Graph stat={intelliNum} heroes={numOfFavs} skill="intelligence" />

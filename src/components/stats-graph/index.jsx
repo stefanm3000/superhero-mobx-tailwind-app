@@ -4,20 +4,24 @@ const Graph = ({ stat, heroes, skill }) => {
   const number = parseInt(stat / heroes);
 
   return (
-    <>
-      <li className="z-30 bg-gradient-to-r from-red-400 to-green-400 h-2 relative w-full rounded p-4 my-2">
-        <span className="font-semibold absolute z-40 bottom-1 text-gray-800">
-          {skill}
-        </span>
-        <span className="absolute right-0 font-semibold z-40 bottom-1 right-3 text-gray-700">
-          {number}
-        </span>
-
-        <span className={`leftperc-${number} arrow-up bottom-0 absolute w-1`}>
-          &nbsp;
-        </span>
-      </li>
-    </>
+    <div className="flex flex-col border p-2 rounded">
+      <label htmlFor={skill}>
+        <div className="flex justify-between">
+          <span>{skill}</span>
+          <span>{number}</span>
+        </div>
+        <meter
+          id={skill}
+          className="w-full h-6"
+          value={number}
+          min="0"
+          low="20"
+          optimum="50"
+          high="80"
+          max="100"
+        />
+      </label>
+    </div>
   );
 };
 
